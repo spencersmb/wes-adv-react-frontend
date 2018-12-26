@@ -3,5 +3,14 @@
     "titleBar.activeForeground": "#ffffff",
     "titleBar.activeBackground": "#8642f4",
     "titleBar.inactiveBackground": "#8642f4"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "xml": {
+      "attr_quotes": "single"
+    }
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
   }
 }

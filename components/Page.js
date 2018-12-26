@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import PropTypes from 'prop-types'
 import Header from './Header'
 import Meta from './Meta'
 import theme from './styles/Theme'
@@ -27,6 +28,10 @@ class Page extends Component {
       </ThemeProvider>
     )
   }
+}
+
+Page.propTypes = {
+  children: PropTypes.element,
 }
 
 export default Page
