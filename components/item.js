@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Title from './styles/Title'
 import ItemStyles from './styles/ItemStyles'
+import DeleteItem from './DeleteItem'
 import PriceTag from './styles/PriceTag'
 import formatMoney from '../lib/formatMoney'
 
@@ -16,6 +17,10 @@ export default class Item extends Component {
       image: PropTypes.string,
       largeImage: PropTypes.string,
     }),
+  }
+
+  deleteItem = deleteItem => async e => {
+    e.preventDefault()
   }
 
   render() {
@@ -40,7 +45,7 @@ export default class Item extends Component {
         <div className="buttonList">
           <Link
             href={{
-              pathname: 'update',
+              pathname: 'Update',
               query: {
                 id: item.id,
               },
@@ -49,7 +54,7 @@ export default class Item extends Component {
             <a>Edit </a>
           </Link>
           <button type="button">Add to Cart</button>
-          <button type="button">Delete</button>
+          <DeleteItem id={item.id}>Delete</DeleteItem>
         </div>
       </ItemStyles>
     )

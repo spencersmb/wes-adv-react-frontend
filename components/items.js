@@ -8,6 +8,7 @@ import Item from './item'
 // Pass to Apollo Query Component and use as renderProps
 // to get access to the data object
 // other items available as well
+
 export const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY {
     items {

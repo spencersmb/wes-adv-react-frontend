@@ -1,0 +1,73 @@
+{
+  "__schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Item": {
+      "title": "Item",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "required": true,
+          "title": "id",
+          "arguments": []
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "title": "title",
+          "arguments": []
+        },
+        "description": {
+          "type": "string",
+          "required": true,
+          "title": "description",
+          "arguments": []
+        },
+        "image": {
+          "type": "string",
+          "required": false,
+          "title": "image",
+          "arguments": []
+        },
+        "largeImage": {
+          "type": "string",
+          "required": false,
+          "title": "largeImage",
+          "arguments": []
+        },
+        "price": {
+          "type": "integer",
+          "required": true,
+          "title": "price",
+          "arguments": []
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "price"
+      ]
+    },
+    "Query": {
+      "title": "Query",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": {
+              "$ref": "#/definitions/Item"
+            }
+          },
+          "required": true,
+          "title": "items",
+          "arguments": []
+        }
+      },
+      "required": [
+        "items"
+      ]
+    }
+  }
+}
