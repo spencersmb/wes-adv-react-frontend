@@ -11,8 +11,8 @@ export const CREATE_ITEM_MUTATION = gql`
     $title: String!
     $price: Int!
     $description: String!
-    $image: String!
-    $largeImage: String!
+    $image: String
+    $largeImage: String
   ) {
     createItem(
       title: $title
@@ -90,6 +90,7 @@ export default class CreateItem extends Component {
           <Form onSubmit={this.handleSubmit(createItem)}>
             <h2>Sell an Item</h2>
             <Error error={error} />
+            <p>fieldset info in this module</p>
             <fieldset disabled={loading}>
               <label htmlFor="file">
                 Image
