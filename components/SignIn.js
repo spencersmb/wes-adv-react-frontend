@@ -30,11 +30,15 @@ class SignIn extends Component {
 
   onSubmit = signin => async e => {
     e.preventDefault()
-    await signin()
-    this.setState({
-      email: '',
-      password: '',
-    })
+    try {
+      await signin()
+      this.setState({
+        email: '',
+        password: '',
+      })
+    } catch (error) {
+      // console.log('GQL ERROR', error)
+    }
   }
 
   render() {

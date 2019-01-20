@@ -19,10 +19,6 @@ export default class Item extends Component {
     }),
   }
 
-  deleteItem = deleteItem => async e => {
-    e.preventDefault()
-  }
-
   render() {
     const { item } = this.props
     return (

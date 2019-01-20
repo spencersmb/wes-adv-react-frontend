@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { ALL_ITEMS_QUERY } from './items'
+import { perPage } from '../config'
 
 export const DELETE_ITEM_MUTATION = gql`
   mutation DELETE_ITEM_MUTATION($id: ID!) {
@@ -20,7 +21,9 @@ export default class DeleteItem extends Component {
 
   handleButtonClick = deleteItem => async e => {
     e.preventDefault()
-    const res = await deleteItem(this.props.id)
+    await deleteItem(this.props.id).catch(err => {
+      alert(err.message)
+    })
   }
 
   // cache is current stuff in browser
@@ -29,7 +32,10 @@ export default class DeleteItem extends Component {
     // manually update cache on the client to match server
     // ALL_ITEMS_QUERY is the query used to display all the data
     // so thats the one we use to edit and update locally
-    const data = cache.readQuery({ query: ALL_ITEMS_QUERY })
+    const data = cache.readQuery({
+      query: ALL_ITEMS_QUERY,
+    })
+    // console.log('data', data)
 
     cache.writeQuery({
       query: ALL_ITEMS_QUERY,

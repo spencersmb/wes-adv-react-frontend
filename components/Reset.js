@@ -104,6 +104,6 @@ class ResetPasswordForm extends Component {
   }
 }
 ResetPasswordForm.propTypes = {
-  token: PropTypes.string,
+  token: PropTypes.string.isRequired,
 }
 export default ResetPasswordForm

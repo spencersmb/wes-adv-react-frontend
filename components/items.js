@@ -46,7 +46,7 @@ export default class Items extends Component {
         <Query
           query={ALL_ITEMS_QUERY}
           // ex page 1 = 4 * 1 - 4 = 0 skipped - for first page is correct
-          variables={{ skip: page * perPage - perPage }}
+          // variables={{ skip: page * perPage - perPage }}
         >
           {({ data, error, loading }) => {
             if (loading) return <div>...Loading</div>
